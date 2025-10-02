@@ -174,6 +174,9 @@ class ApiGatewayConstruct(Construct):
                     "X-Amz-Date",
                     "X-Amz-Security-Token",
                     "X-Origin-Verify",
+                    "Cache-Control",
+                    "Pragma",
+                    "Expires",
                 ],
                 max_age=Duration.minutes(5),
             ),
@@ -325,7 +328,7 @@ class ApiGatewayConstruct(Construct):
                         {
                             "statusCode": "200",
                             "responseParameters": {
-                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Origin-Verify'",
+                                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Origin-Verify,Cache-Control,Pragma,Expires'",
                                 "method.response.header.Access-Control-Allow-Origin": "'*'",
                                 "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,PUT,POST,DELETE,PATCH,HEAD'",
                             },
